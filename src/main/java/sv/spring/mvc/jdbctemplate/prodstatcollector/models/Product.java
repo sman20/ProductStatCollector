@@ -16,6 +16,9 @@ public class Product {
         this.url = url;
     }
 
+    public Product() {      // for newProduct() method in pr.controller
+    }
+
     public int getId() {
         return id;
     }

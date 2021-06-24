@@ -11,7 +11,10 @@
 </div>
 
 <br>
-
+<form th:method="GET" th:action="@{/products/new}">
+    <input type="submit" value="New Product"/>
+</form>
+<br>
 <form th:method="GET" th:action="@{/start}">
     <input type="submit" value="Main"/>
 </form>

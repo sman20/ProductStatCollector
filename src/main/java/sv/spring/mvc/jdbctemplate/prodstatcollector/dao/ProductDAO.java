@@ -36,4 +36,10 @@ public class ProductDAO {
     public Product getProduct(int id) {
         return products.stream().filter(product -> product.getId() == id).findAny().orElse(null);
     }
+
+    public void addProduct(Product product) {
+        product.setId(++lastProductId);
+        product.setVendor( new ProductVendor("Delhaize", Arrays.asList("dlzSearchPar3", "dlzSearchPar4")) );
+        products.add(product);
+    }
 }

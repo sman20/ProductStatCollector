@@ -4,11 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import sv.spring.mvc.jdbctemplate.prodstatcollector.dao.ProductDAO;
+import sv.spring.mvc.jdbctemplate.prodstatcollector.models.Product;
 
 @Controller
 @ComponentScan("sv.spring.mvc.jdbctemplate.prodstatcollector")
@@ -33,6 +32,18 @@ public class ProductsController {
     public String showProduct(@PathVariable("id") int id, Model model) {
         model.addAttribute("product", productDAO.getProduct(id));
         return "products/product";
+    }
+
+    @GetMapping("/new")
+    public String newProduct(Model model) {
+        model.addAttribute("product", new Product());
+        return "products/new";
+    }
+
+    @PostMapping()
+    public String createProduct(@ModelAttribute("product") Product product) {
+        productDAO.addProduct(product);
+        return "redirect:/products";
     }
 
 }
