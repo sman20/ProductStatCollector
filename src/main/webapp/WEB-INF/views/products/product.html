@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ProductStatCollector: Product</title>
+</head>
+<body>
+
+<p th:text="${'ID : ' + product.getId()}"/>
+<p th:text="${'Name : ' + product.getName()}"/>
+<p th:text="${'Type : ' + product.getType()}"/>
+<p th:text="${'Vendor : ' + product.getVendor().getName()}"/>
+
+<br>
+<form th:method="GET" th:action="@{/products}">
+    <input type="submit" value="All Products"/>
+</form>
+<br>
+<form th:method="GET" th:action="@{/start}">
+    <input type="submit" value="Main"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="commons-cli-1.4">
+    <CLASSES>
+      <root url="jar://D:/instls/code/libs/Apache_httpcomponents-client-5.0.1-bin/lib/commons-cli-1.4.jar!/" />
+      <root url="jar://D:/instls/code/libs/Apache_httpcomponents-client-5.0.1-bin/lib/httpclient5-5.0.1.jar!/" />
+      <root url="jar://D:/instls/code/libs/Apache_httpcomponents-client-5.0.1-bin/lib/httpcore5-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
